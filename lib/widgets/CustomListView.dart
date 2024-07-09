@@ -8,7 +8,6 @@ class CustomListView extends StatelessWidget {
   Widget build(BuildContext context) {
     model.User currentUser = Provider.of<UserProvider>(context, listen: false).getUser!;
 
-    // Example list of transactions; replace with your actual data source
     List<model.User> transactions = [currentUser];
 
     return ListView.builder(
@@ -16,12 +15,12 @@ class CustomListView extends StatelessWidget {
       physics: NeverScrollableScrollPhysics(),
       itemCount: transactions.length,
       itemBuilder: (context, index) {
-        model.User transaction = transactions[index]; // Using individual transactions
+        model.User transaction = transactions[index];
 
         // Debugging print
         print('Transaction type: ${transaction.type}, Amount: ${transaction.amount}');
 
-        bool isIncome = transaction.type?.toLowerCase() == 'income'; // Normalize string comparison
+        bool isIncome = transaction.type?.toLowerCase() == 'income';
 
         return Container(
           height: 100,
@@ -41,7 +40,7 @@ class CustomListView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        transaction.note ?? 'No note', // Default note if null
+                        transaction.note ?? 'No note',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
@@ -49,7 +48,7 @@ class CustomListView extends StatelessWidget {
                       ),
                       SizedBox(height: 10),
                       Text(
-                        transaction.date?.toLocal().toString().split(' ')[0] ?? 'No date', // Default date if null
+                        transaction.date?.toLocal().toString().split(' ')[0] ?? 'No date',
                         style: TextStyle(
                           fontSize: 16,
                           color: Colors.grey,

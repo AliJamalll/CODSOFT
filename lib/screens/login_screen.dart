@@ -40,7 +40,8 @@ class _LoginScreenState extends State<LoginScreen> {
     if(res == "success"){
       Navigator.of(context).pushReplacement(MaterialPageRoute(builder:
           (context) =>  HomeScreen()
-      ));    }else{
+      ));
+    } else{
       ShowSnackBar(res,context);
     }
   }

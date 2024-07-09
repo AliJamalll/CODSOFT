@@ -19,7 +19,7 @@ class _AddTransactionScreenState extends State<AddTransactionScreen> {
   final TextEditingController noteController = TextEditingController();
   final TextEditingController totalController = TextEditingController();
 
-  String transactionType = 'income'; // Default value
+  String transactionType = 'income';
 
   Future<void> _selectDate(BuildContext context) async {
     DateTime? selectedDate = await showDatePicker(
@@ -60,7 +60,6 @@ class _AddTransactionScreenState extends State<AddTransactionScreen> {
     int newTotal = transactionType == 'Income' ? currentTotal + amount : currentTotal - amount;
 
     model.User updatedUser = model.User(
-      // Add fields here as per your User model
       email: currentUser.email,
       uid: currentUser.uid,
       username: currentUser.username,

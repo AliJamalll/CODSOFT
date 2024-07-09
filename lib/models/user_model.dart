@@ -29,12 +29,11 @@ class User {
     'email': email,
     'total': total,
     'amount': amount,
-    'date': date != null ? Timestamp.fromDate(date!) : null, // Convert DateTime to Timestamp
+    'date': date != null ? Timestamp.fromDate(date!) : null,
     'note': note,
     'type': type,
   };
 
-  // Helper method to safely convert a value to int
   static int? _safeInt(dynamic value) {
     if (value is int) {
       return value;
@@ -44,7 +43,6 @@ class User {
     return null;
   }
 
-  // Create User from Firestore document snapshot
   static User fromSnap(DocumentSnapshot snap) {
     var snapshot = snap.data() as Map<String, dynamic>;
 

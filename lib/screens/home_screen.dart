@@ -1,7 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:personal_expense_tracker/screens/add_transaction_screen.dart';
-import 'package:personal_expense_tracker/utiles/colors.dart';
 import 'package:provider/provider.dart';
 import 'package:personal_expense_tracker/models/user_model.dart' as model;
 import 'package:personal_expense_tracker/providers/user_provider.dart';
@@ -41,9 +39,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<void> _refreshHomeScreen() async {
     final userProvider = Provider.of<UserProvider>(context, listen: false);
-    await userProvider.refreshHomeScreen(); // Call the refresh method from the provider
+    await userProvider.refreshHomeScreen();
     setState(() {
-      userStream = _getUserTransactionsStream(); // Refresh the stream to get updated data
+      userStream = _getUserTransactionsStream();
     });
   }
 
@@ -57,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Padding(
           padding: const EdgeInsets.only(left: 15.0, top: 20, right: 10),
           child: RefreshIndicator(
-            onRefresh: _refreshHomeScreen, // Trigger refresh on pull down
+            onRefresh: _refreshHomeScreen,
             child: SingleChildScrollView(
               physics: AlwaysScrollableScrollPhysics(),
               child: Column(

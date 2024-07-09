@@ -31,7 +31,7 @@ class AuthMethod {
       await _firestore.collection('users').doc(currentUser.uid).set(user.toJson(), SetOptions(merge: true));
     } catch (e) {
       print("Error adding user details: $e");
-      throw e; // Re-throw the error for further handling if needed
+      throw e;
     }
   }
 

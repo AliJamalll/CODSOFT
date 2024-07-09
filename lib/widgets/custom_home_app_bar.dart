@@ -40,9 +40,9 @@ class _CustomHomeAppBarState extends State<CustomHomeAppBar> {
 
   Future<void> _refreshHomeScreen() async {
     final userProvider = Provider.of<UserProvider>(context, listen: false);
-    await userProvider.refreshHomeScreen(); // Call the refresh method from the provider
+    await userProvider.refreshHomeScreen();
     setState(() {
-      userStream = _getUserTransactionsStream(); // Refresh the stream to get updated data
+      userStream = _getUserTransactionsStream();
     });
   }
 
