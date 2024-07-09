@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "533540273573",
+    "project_id": "financy-c26b8",
+    "storage_bucket": "financy-c26b8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:533540273573:android:efe897ad6554ba83d13c4c",
+        "android_client_info": {
+          "package_name": "com.example.personal_expense_tracker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsb1Q-iDxdxKTx9Mg0urC6XzQIY0Y09Vw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
